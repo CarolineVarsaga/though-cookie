@@ -1,0 +1,118 @@
+@mixin food-list-background {
+    background-color: white;
+    border-top: $border;
+    height: 3rem;
+    position: relative;
+}
+
+@mixin food-labels {
+    align-items: center;
+    font-size: 0.7rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    padding: 2px 3px;
+    margin-block: 2px;
+    margin-left: 8px;
+}
+
+@mixin food-section {
+    .food-section {
+        background-color: $yellow;
+
+        .food-images {
+            .chickpeas-dip {
+                margin-right: 0;
+                background-image: url('../img/chickpeas-and-dip-480x640.jpg');
+            }
+
+            .chickpeas-bowl {
+                background-image: url('../img/chickpeas-bowl-621x480.jpg');
+            }
+
+            .chickpeas-veggie {
+                background-image: url('../img/chickpeas-and-vegetables-480x600.jpg');
+            }
+
+            .chickpeas-veggie,
+            .chickpeas-bowl,
+            .chickpeas-dip {
+                background-size: cover;
+                background-position: center center;
+            }
+        }
+
+        .food-list {
+            padding: 0;
+
+            li {
+                .food-list-foodname {
+                    @include food-list-background;
+                    text-transform: uppercase;
+                }
+
+                .food-info {
+                    @include food-list-background;
+                    border-bottom: $border;
+                    margin: 0;
+                }
+
+                .food-description {
+                    font-weight: 100;
+                }
+
+                .price {
+                    align-items: center;
+                }
+
+                /*============================================================
+                ------------------------FOOD-LABELS---------------------------
+                ============================================================*/
+                .label-new,
+                .label-vegan,
+                .label-popular {
+                    @include food-labels;
+
+                    &>p {
+                        margin: 0;
+                    }
+                }
+
+                .label-new,
+                .label-vegan {
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+
+                .label-new {
+                    background-color: $purple;
+                    transform: rotate(3deg);
+
+                    &>div {
+                        transform: rotate(-3deg);
+                    }
+                }
+
+                .label-vegan {
+                    background-color: $green;
+                    transform: rotate(-4deg);
+
+                    &>div {
+                        transform: rotate(4deg);
+                    }
+                }
+
+                .label-popular {
+                    background-color: $yellow;
+                    transform: rotate(-1deg);
+                    padding: 0;
+
+                    &>div {
+                        transform: rotate(1deg);
+                    }
+                }
+            }
+        }
+    }
+}

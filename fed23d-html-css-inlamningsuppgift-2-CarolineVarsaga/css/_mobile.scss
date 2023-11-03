@@ -1,0 +1,268 @@
+@import 'style-folder/colors';
+@import 'page-1/header';
+@import 'page-1/tahini-section';
+@import 'page-1/lettuce-section';
+@import 'page-1/cookie-bar';
+@import 'page-2/food-section';
+@import 'page-3/form';
+@import 'page-3/contact';
+
+@mixin food-slide {
+    min-width: 12rem;
+    width: 12rem;
+    height: 12rem;
+    margin-right: 4px;
+}
+
+/*======================================================================================
+----------------------------------------------------------------------------------------
+======================================================================================*/
+body {
+    font-family: 'Jockey One', sans-serif;
+    font-weight: 300;
+    background-color: black;
+    width: 100%;
+    height: fit-content;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin: auto;
+        min-height: 100vh;
+
+        /*================================================================================
+        -----------------------------------COOKIE-BAR-------------------------------------
+        =================================================================================*/
+        @include cookie-bar;
+
+        .cookie-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .cookie-buttons {
+                font-size: 1.1rem;
+                gap: 1rem;
+                height: 100px;
+
+                .decline-button,
+                .accept-button {
+                    width: 120px;
+                }
+            }
+        }
+        /*==============================================================================
+        ------------------------------------HEADER--------------------------------------
+        ==============================================================================*/
+        @include sidebar;
+
+        /*==============================================================================
+        -------------------------------------MAIN---------------------------------------
+        ==============================================================================*/
+        main {
+            display: grid;
+            grid-column: 1 / span 4;
+
+            /*===========================================================================
+            ---------------------------PAGE-1----TAHINI-TITLE----------------------------
+            ===========================================================================*/
+            .page-1 {
+                display: grid;
+                gap: 1rem;
+                position: relative;
+                padding-top: 45px;
+                width: 100%;
+
+                @include tahini-section;
+
+                .tahini-section {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                }
+
+                /*===========================================================================
+                -------------------------------LETTUCE-SECTION-------------------------------
+                ===========================================================================*/
+                @include lettuce;
+
+                .lettuce-section {
+                    min-height: 100%;
+
+                    .lettuce-text {
+                        font-size: 1.1rem;
+                        padding-left: 0.5rem;
+                        padding-right: 0.5rem;
+                        padding-top: 0.5rem;
+                        padding-bottom: 0.3rem;
+                    }
+
+                    .white-arrow,
+                    .lettuce-text-explore {
+                        visibility: hidden;
+                    }
+                }
+            }
+
+            /*============================================================================
+            ---------------------------PAGE-2-----FOOD-SECTION----------------------------
+            ============================================================================*/
+            @include food-section;
+
+            .food-section {
+                padding-bottom: 1rem;
+
+                .food-images {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    overflow-x: auto;
+                    width: 100vw;
+                    padding: 0.5rem;
+
+                    .chickpeas-veggie,
+                    .chickpeas-bowl,
+                    .chickpeas-dip {
+                        @include food-slide;
+                    }
+
+                    .chickpeas-dip {
+                        margin-right: 0;
+                    }
+
+                    .chickpeas-veggie {
+                        flex: 1;
+                    }
+
+                    .chickpeas-bowl,
+                    .chickpeas-dip {
+                        flex: 2;
+                    }
+                }
+
+                .food-list {
+                    height: fit-content;
+
+                    li {
+                        display: flex;
+                        flex-flow: row wrap;
+                        width: 100vw;
+
+                        .food-list-foodname {
+                            font-size: 1rem;
+                            display: flex;
+                            height: 35px;
+                            align-items: center;
+                            justify-content: center;
+                            flex-basis: 100%;
+                            margin-top: 6px;
+                            padding-right: 2px;
+                            width: auto;
+                        }
+
+                        .food-info {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+
+                        .food-description {
+                            align-items: center;
+                            flex-basis: 65%;
+                            font-size: 0.9rem;
+                            padding-left: 0.5rem;
+                            text-align: left;
+                        }
+
+                        .price {
+                            flex-basis: 35%;
+                            font-size: 1rem;
+                            justify-content: flex-end;
+                            padding-right: 0.5rem;
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+
+            /*===============================================================================
+            ------------------------------PAGE-3------FORM-SECTION---------------------------
+            ===============================================================================*/
+            .page-3 {
+                background-color: $green;
+                @include form;
+
+                .form-heading {
+                    display: flex;
+                    font-size: 1.7rem;
+                    justify-content: center;
+                    margin-bottom: 0.5rem;
+                    text-transform: uppercase;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    gap: 5px;
+                    margin: 10px 0;
+                    padding: 10px;
+
+                    .form-input {
+                        width: 220px;
+                    }
+
+                    .input-label {
+                        display: grid;
+                        font-size: 1.1rem;
+                    }
+
+                    .form-buttons {
+                        margin-top: 0.5rem;
+                        display: flex;
+                        font-size: 1.1rem;
+                        justify-content: center;
+                        gap: 1rem;
+                        width: 100%;
+                        height: 48px;
+
+                        .cancel-button {
+                            width: 120px;
+                            border-style: none;
+                        }
+
+                        .submit-button {
+                            width: 120px;
+                            border-style: none;
+                        }
+                    }
+                }
+
+                @include contact-section;
+
+                .contact-section {
+                    display: flex;
+                    justify-content: center;
+                    padding-bottom: 0.5rem;
+                    padding-top: 0.5rem;
+
+                    .contact-image {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        grid-template-rows: repeat(3, 1fr);
+                        height: 40vh;
+
+                        .address {
+                            font-size: 1.1rem;
+                            gap: 0.5rem;
+
+                            .material-symbols-outlined {
+                                font-size: xx-large;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

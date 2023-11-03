@@ -1,0 +1,57 @@
+@keyframes slideInLeft {
+  0% {
+    transform: translate(-100%, 50%);
+    bottom: 3.36rem;
+    left: 2.4rem;
+  }
+
+  100% {
+    bottom: 3.36rem;
+    left: 2.4rem;
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+    left: 9.33rem;
+    bottom: 7.7rem;
+  }
+
+  100% {
+    left: 9.33rem;
+    bottom: 7.7rem;
+  }
+}
+
+@mixin tahini {
+  .tahini-title {
+    margin-inline: auto;
+    margin-bottom: 0;
+    font-weight: 200;
+    text-transform: uppercase;
+    position: relative;
+
+    .chickpeas {
+      color: $yellow;
+      position: absolute;
+      z-index: 1;
+      transform: translateY(50%);
+      animation: 1.3s ease 0s 1 slideInLeft;
+    }
+
+    .tahini {
+      color: $green;
+      position: absolute;
+      letter-spacing: 0.2rem;
+      transform: translateY(50%);
+      z-index: 3;
+    }
+
+    .drizzle {
+      color: $purple;
+      position: absolute;
+      animation: 1.3s ease 0s 1 slideInTop;
+    }
+  }
+}

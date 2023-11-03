@@ -1,0 +1,41 @@
+@import 'tahini-title';
+
+@mixin tahini-section {
+    .tahini-section {
+        @include tahini;
+
+        .tahini-title {
+            display: flex;
+            font-size: 6.15rem;
+            height: 9.3rem;
+            justify-content: center;
+            margin-top: 4.5rem;
+            width: 300px;
+
+            .chickpeas {
+                bottom: 3.36rem;
+                left: 2.4rem;
+                font-size: 2.55rem;
+            }
+
+            .tahini {
+                justify-content: center;
+                bottom: 6rem;
+            }
+
+            .drizzle {
+                left: 9.33rem;
+                bottom: 7.7rem;
+                font-size: 2.55rem;
+            }
+        }
+
+        .tahini-text {
+            color: $green;
+            display: flex;
+            font-size: 1.1rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+}

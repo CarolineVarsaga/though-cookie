@@ -1,0 +1,42 @@
+@mixin form {
+    form {
+        .form-heading {
+            text-transform: uppercase;
+            margin: 4px;
+        }
+
+        .form-input {
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            padding: 0;
+            height: 28px;
+            margin: 10px 0;
+            background-color: #fff;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+
+        .input-label {
+            text-transform: uppercase;
+        }
+
+        .form-buttons {
+
+            .cancel-button,
+            .submit-button {
+                text-transform: uppercase;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            .cancel-button {
+                background-color: $purple;
+            }
+
+            .submit-button {
+                background-color: $yellow;
+            }
+        }
+    }
+}

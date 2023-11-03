@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+@import 'vendor/_normalize';
+@import 'style-folder/menu';
+@import 'mobile';
+
+
+@media screen and (min-width: 640px) {
+  @import 'tablet';
+}
+
+@media screen and (min-width: 768px) {
+  @import 'tablet768';
+}
+
+@media screen and (min-width: 1024px) {
+  @import 'desktop';
+}
+
+@media screen and (min-width: 1280px) {
+  @import 'desktop1280';
+}

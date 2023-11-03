@@ -1,0 +1,36 @@
+@mixin sidebar {
+    .sidebar {
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        background-color: #000000;
+        text-transform: uppercase;
+        height: 4rem;
+        position: fixed;
+        z-index: 8;
+        width: 100%;
+        border-bottom: 0.5em solid $yellow;
+
+        h1 {
+            display: flex;
+            flex-basis: 70%;
+            justify-content: flex-end;
+            letter-spacing: 0.3rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            margin-top: 0.5rem;
+            font-weight: 200;
+            font-size: 1.95rem;
+
+            &>span {
+                margin-left: 1rem;
+            }
+
+            &>a {
+                cursor: pointer;
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+body {
+    .grid-container {
+        grid-template-columns: repeat(8, 1fr);
+
+        /*==============================================================================
+        -------------------------------------MAIN---------------------------------------
+        ==============================================================================*/
+        main {
+            grid-column: 1 / span 8;
+
+            /*==========================================================================
+            -------------------------------TAHINI-TITLE---------------------------------
+            ==========================================================================*/
+            .page-1 {
+                border-right: 8px solid $yellow;
+                min-height: 100vh;
+
+                .tahini-section {
+                    display: grid;
+                    gap: 1rem;
+                    width: 100%;
+                    justify-content: center;
+
+                    .tahini-title {
+                        grid-column: 1 / span 4;
+                    }
+
+                    .tahini-text {
+                        grid-column: 5 / span 4;
+                        align-items: start;
+                        font-size: 1.5rem;
+                        padding-top: 0.5rem;
+                        margin-bottom: 0;
+                    }
+                }
+
+                /*==========================================================================
+                -------------------------------LETTUCE-SECTION------------------------------
+                ==========================================================================*/
+                .lettuce-section {
+                    display: grid;
+                    grid-template-columns: repeat(8, 1fr);
+                    gap: 1rem;
+                    width: 100%;
+
+                    .lettuce-div {
+                        grid-column: 1 / span 4;
+                        height: 100%;
+                    }
+
+                    .lettuce-text {
+                        grid-column: 5 / span 4;
+                        font-size: 1.5rem;
+                        border-left: 8px solid $yellow;
+                        padding-left: 2px;
+
+                        &>p {
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+
+            /*==========================================================================
+            -------------------------------FOOD-SECTION---------------------------------
+            ==========================================================================*/
+            .food-section {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .food-images {
+                    justify-content: space-between;
+                    padding-bottom: 1rem;
+                    height: 100%;
+
+                    .chickpeas-veggie,
+                    .chickpeas-bowl,
+                    .chickpeas-dip {
+                        height: 100%
+                    }
+
+                    .chickpeas-veggie {
+                        flex: 1;
+                    }
+
+                    .chickpeas-bowl,
+                    .chickpeas-dip {
+                        flex: 2;
+                    }
+                }
+
+                .food-list {
+                    row-gap: 8px;
+                    display: flex;
+                    flex-direction: column;
+
+                    li {
+                        .food-list-foodname {
+                            height: 3rem;
+                            border-bottom: $border;
+                            justify-content: flex-start;
+                            flex-basis: 35%;
+                            margin-top: 0px;
+                            padding-left: 8px;
+                        }
+
+                        .food-description {
+                            flex-basis: 45%;
+                            padding-left: 0;
+                        }
+
+                        .price {
+                            flex-basis: 20%;
+                        }
+                    }
+                }
+            }
+
+            /*==========================================================================
+            ---------------------------PAGE-3---FORM-SECTION----------------------------
+            ==========================================================================*/
+            .page-3 {
+                width: 100%;
+                min-height: 100vh;
+
+                .form-section {
+
+                    .form-heading {
+                        font-size: 2rem;
+                    }
+
+                    form {
+                        gap: 0.7rem;
+                        grid-template-rows: repeat(7, 1fr);
+
+                        label {
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            gap: 2rem;
+
+                            .form-input {
+                                width: 240px;
+                                grid-column: 3 / span 1;
+                            }
+
+                            .input-label {
+                                grid-column: 2 / span 1;
+                                align-items: center;
+                                font-size: 1.5rem;
+                            }
+                        }
+
+                        .form-buttons {
+                            gap: 2.5rem;
+
+                            .cancel-button,
+                            .submit-button {
+                                width: 130px;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+
+                .contact-section {
+                    padding-bottom: 0;
+
+                    .contact-image {
+                        .address {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

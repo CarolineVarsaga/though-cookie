@@ -1,0 +1,371 @@
+body {
+    width: 100%;
+
+    .grid-container {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+
+        /*==========================================================================
+        -------------------------------COOKIE-BAR-----------------------------------
+        ==========================================================================*/
+       
+        .cookie-bar {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+            align-items: center;
+            padding-bottom: 0;
+
+            .cookie-text {
+                font-size: 1.1rem;
+                grid-column: 2 / span 3;
+                justify-content: start;
+            }
+
+            .cookie-buttons {
+                grid-column: 8 / span 4;
+                gap: 2rem;
+            }
+
+            .cookie-buttons {
+                .decline-button {
+                    width: 160px;
+                    height: 35px;
+                    font-size: 1.5rem;
+                }
+
+                .accept-button {
+                    width: 160px;
+                    height: 35px;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        /*======================================================================================
+        -----------------------------------------HEADER-----------------------------------------
+        ======================================================================================*/
+        header {
+            grid-column: 1 / span 1;
+            min-height: 100vh;
+            width: 8.3vw;
+            position: fixed;
+            z-index: 3;
+
+            .sidebar {
+                flex-wrap: wrap;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-evenly;
+                gap: 2rem;
+                height: inherit;
+                width: inherit;
+                border-bottom: none;
+                padding-bottom: 1.5rem;
+
+                .menu-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    position: relative;
+
+                    .checkbox {
+                        display: flex;
+                        position: absolute;
+                        left: 0;
+                    }
+
+                    .hamburger-menu {
+                        display: flex;
+                        margin-top: 1rem;
+
+                        .menu-button {
+                            position: static;
+                        }
+
+                        .menu {
+                            display: grid;
+                            grid-template-columns: repeat(12, minmax(0, 1fr));
+                            top: 0;
+                            width: 100%;
+                            transition: all 0.3s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+
+                            .menu-options {
+                                grid-column: 2 / span 11;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+
+                h1 {
+                    .home-page {
+                        align-items: flex-start;
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                        gap: 2.5rem;
+                        flex-basis: 90%;
+                        letter-spacing: 0.3rem;
+                        margin-right: 1rem;
+                        margin-left: 1rem;
+                        font-weight: 200;
+                        font-size: 2.8rem;
+                        max-width: 20px;
+                        word-break: break-all;
+
+                        &>span {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*==============================================================================
+        -------------------------------------MAIN---------------------------------------
+        ==============================================================================*/
+        main {
+            grid-column: 2 / span 11;
+
+            /*==========================================================================
+            -------------------------------PAGE-1--TAHINI-------------------------------
+            ==========================================================================*/
+
+            .page-1 {
+                display: grid;
+                grid-template-columns: repeat(11, minmax(0, 1fr));
+                grid-template-rows: repeat(2, minmax(0, 1fr));
+                gap: 1rem;
+                margin-top: 0;
+                border-left: 1rem solid $yellow;
+
+                .tahini-section {
+                    margin-top: 0;
+                    grid-column: 1 / 12;
+                    gap: 1rem;
+                    width: 100%;
+                    grid-template-columns: repeat(11, minmax(0, 1fr));
+
+                    .tahini-title {
+                        grid-column: span 4;
+                        margin-top: 7rem;
+                        z-index: 0;
+                    }
+
+                    .tahini-text {
+                        font-size: 2rem;
+                        margin-top: 1rem;
+                        margin-right: 1rem;
+                        grid-column: span 7;
+                        align-items: flex-start;
+                    }
+                }
+
+                /*==========================================================================
+                -------------------------------LETTUCE-SECTION------------------------------
+                ==========================================================================*/
+
+                .lettuce-section {
+                    width: 100%;
+                    grid-column: 1 / 12;
+                    grid-template-columns: repeat(11, minmax(0, 1fr));
+                    background-color: black;
+
+                    .lettuce-div {
+                        grid-column: span 5;
+                        height: 100%;
+                        cursor: pointer;
+
+                        .white-arrow {
+                            transform: rotate(90deg);
+                            position: absolute;
+                            bottom: 1.1rem;
+                            visibility: visible;
+                            animation: 1.3s ease 0s 1;
+                        }
+
+                        &:hover {
+                            .white-arrow {
+                                bottom: 0.5rem;
+                                transition: bottom 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                            }
+                        }
+                    }
+
+                    .lettuce-text {
+                        grid-column: span 6;
+                        font-size: 2rem;
+                        border-left: 1rem solid $yellow;
+                        padding-left: 2px;
+                        padding-right: 1rem;
+
+                        &>p {
+                            margin-top: 4px;
+
+                            .lettuce-text-explore {
+                                text-transform: uppercase;
+                                display: block;
+                                visibility: visible;
+
+                                &>a {
+                                    text-decoration: none;
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }              
+            }
+
+            /*===========================================================================
+            ---------------------------PAGE-2---FOOD-SECTION-----------------------------
+            ===========================================================================*/
+            .food-section {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(11, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                border-left: 1rem solid $yellow;
+                border-right: 1rem solid $yellow;
+                width: 100%;
+
+                .food-images {
+                    grid-column: 1 / 12;
+                    width: 100%;
+                    overflow: visible;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 1rem;
+                    padding-bottom: 0; 
+                    gap: 1rem; 
+                    display: grid;
+                    grid-template-columns: repeat(11, 1fr);
+
+                    .chickpeas-veggie,
+                    .chickpeas-bowl,
+                    .chickpeas-dip {
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    .chickpeas-veggie {
+                        background-image: url('../img/chickpeas-and-vegetables-768x960.jpg');
+                        grid-column: 1 / span 3;
+                    }
+
+                    .chickpeas-bowl {
+                        background-image: url('../img/chickpeas-bowl-994x768.jpg');
+                        grid-column: 4 / span 4;
+                    }
+
+                    .chickpeas-dip {
+                        margin-right: 3px;
+                        background-image: url('../img/chickpeas-and-dip-768x1024.jpg');
+                        grid-column: 8 / span 4;
+                    }
+                }
+
+                .food-list {
+                    grid-column: 1 / 13;
+                    width: 100%;
+                    min-height: 100%;
+                    justify-content: space-evenly;
+                    margin-top: 0; 
+
+                    li {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(11, 1fr);
+
+                        .food-list-foodname {
+                            grid-column: 1 / span 4;
+                            font-size: 1.5rem;
+                        }
+
+                        .food-description {
+                            grid-column: 5 / span 6;
+                            font-size: 1.2rem;
+                        }
+
+                        .price {
+                            font-size: 1.5rem;
+                            grid-column: 11 / span 1;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+
+            /*==========================================================================
+            ----------------------------PAGE-3--FORM-SECTION----------------------------
+            ==========================================================================*/
+            .page-3 {
+                border-left: 1rem solid white;
+                display: grid;
+                grid-template-columns: repeat(11, 1fr);
+                gap: 1rem;
+                width: 100%;
+
+                .form-section {
+                    grid-column: 1 / span 5;
+                    display: grid;
+
+                    .form-heading {
+                        align-items: flex-end;
+                        font-size: 3rem;
+                        justify-content: flex-start;
+                    }
+
+                    form {
+                        align-items: flex-start;
+
+                        label {
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 1rem;
+
+                            .form-input {
+                                grid-column: 2 / span 2;
+                                width: 240px;
+                            }
+
+                            .input-label {
+                                grid-column: 1 / span 1;
+                                font-size: 1.5rem;
+                            }
+                        }
+
+                        .form-buttons {
+                            justify-content: flex-start;
+
+                            .cancel-button,
+                            .submit-button {
+                                cursor: pointer;
+                                font-size: 1.5rem;
+                                height: 35px;
+                                width: 160px;
+                            }
+                        }
+                    }
+                }
+
+                .contact-section {
+                    display: grid;
+                    grid-column: 6 / span 6;
+                    align-items: center;
+                    min-height: 100vh;
+
+                    .contact-image {
+                        width: 40vw;
+                        height: 60vh;
+
+                        .address {
+                            gap: 1rem;
+                            margin-right: 0px;
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
